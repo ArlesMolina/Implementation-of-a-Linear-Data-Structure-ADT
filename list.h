@@ -1,8 +1,8 @@
 // =================================================================
 //
 // File: list.h
-// Author:
-// Date:
+// Author: Arles Guevara Molina
+// Date: 19/09/2023
 // 
 // =================================================================
 #ifndef LIST_H
@@ -61,6 +61,7 @@ private:
 
 public:
 	List();
+	List(const List<T>&);
 	~List();
 
 	uint  length() const;
@@ -224,8 +225,12 @@ T List<T>::last() const {
 template <class T>
 T List<T>::get(uint index) const {
 	T aux;
-
-	// TO DO
+	T get(const std::vector<T>& vec, int index) {
+    if (index < 0 || index >= vec.size()) {
+        throw std::out_of_range("Posición inválida");
+		}
+    return vec[index];
+	}
 	return aux;
 }
 
